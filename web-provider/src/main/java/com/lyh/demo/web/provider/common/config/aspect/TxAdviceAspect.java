@@ -1,4 +1,4 @@
-package com.lyh.demo.web.common.config.aspect;
+package com.lyh.demo.web.provider.common.config.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.aop.Advisor;

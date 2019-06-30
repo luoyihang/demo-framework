@@ -1,4 +1,4 @@
-package com.lyh.demo.web.common.config.threadpool;
+package com.lyh.demo.web.provider.common.config.threadpool;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

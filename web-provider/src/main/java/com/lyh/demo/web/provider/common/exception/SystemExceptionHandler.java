@@ -1,4 +1,4 @@
-package com.lyh.demo.web.common.exception;
+package com.lyh.demo.web.provider.common.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;

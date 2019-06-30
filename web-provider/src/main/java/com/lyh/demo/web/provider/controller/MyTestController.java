@@ -1,6 +1,6 @@
-package com.lyh.demo.web.controller;
+package com.lyh.demo.web.provider.controller;
 
-import com.lyh.demo.web.dao.PersonDao;
+import com.lyh.demo.web.provider.dao.PersonDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

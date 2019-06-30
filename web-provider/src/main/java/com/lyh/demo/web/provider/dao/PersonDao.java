@@ -1,4 +1,4 @@
-package com.lyh.demo.web.dao;
+package com.lyh.demo.web.provider.dao;
 
 /**
  * @author luoyihang

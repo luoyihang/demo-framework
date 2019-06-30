@@ -1,4 +1,4 @@
-package com.lyh.demo.web;
+package com.lyh.demo.web.provider;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2019/6/30 14:24
  */
 @SpringBootApplication
-@MapperScan(basePackages = "com.lyh.demo.web.dao")
+@MapperScan(basePackages = "com.lyh.demo.web.provider.dao")
 public class DemoApplication {
 
     public static void main(String[] args) {
