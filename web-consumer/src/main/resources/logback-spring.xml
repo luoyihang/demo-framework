@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <contextName>logback</contextName>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--
+        日志输出格式：
+			%d表示日期时间，
+			%thread表示线程名，
+			%-5level：级别从左显示5个字符宽度
+			%logger{50} 表示logger名字最长50个字符，否则按照句点分割。
+			%msg：日志消息，
+			%n是换行符
+        -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d [%thread] %highlight([%level]) %cyan([%c{0}]) %msg%n</pattern>
+        </layout>
+    </appender>
+
+
+    <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 -->
+    <appender name="appLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>log/sys.log</File>
+        <!-- rollingPolicy:当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名。 -->
+        <!-- TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 活动文件的名字会根据fileNamePattern的值，每隔一段时间改变一次 -->
+            <!-- 文件名：sys.2017-12-05.log -->
+            <fileNamePattern>log/sys.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 每产生一个日志文件，该日志文件的保存期限的天数 -->
+            <maxHistory>30</maxHistory>
+            <!--&lt;!&ndash; 当日志文件超过maxFileSize指定的大小是，根据上面提到的%i进行日志文件滚动 &ndash;&gt;-->
+            <!--<timeBasedFileNamingAndTriggeringPolicy  class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+                <!--<maxFileSize>100MB</maxFileSize>-->
+            <!--</timeBasedFileNamingAndTriggeringPolicy>-->
+        </rollingPolicy>
+
+        <!-- 日志输出格式： -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d [%thread] %highlight([%level]) %cyan([%c{0}]) %msg%n</pattern>
+        </layout>
+    </appender>
+
+
+    <springProfile name="local">
+        <root level="info">
+            <appender-ref ref="stdout"/>
+        </root>
+    </springProfile>
+
+    <!--开发环境-->
+    <springProfile name="dev">
+        <root level="info">
+            <appender-ref ref="stdout"/>
+        </root>
+    </springProfile>
+
+</configuration>
