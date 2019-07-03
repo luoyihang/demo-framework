@@ -1,6 +1,6 @@
-package com.lyh.demo.common.config.exception;
+package com.lyh.demo.web.common.config.exception;
 
-import com.lyh.demo.common.exception.BaseException;
+import com.lyh.demo.web.common.exception.BaseException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

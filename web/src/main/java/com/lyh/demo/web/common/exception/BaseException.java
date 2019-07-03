@@ -1,4 +1,4 @@
-package com.lyh.demo.common.exception;
+package com.lyh.demo.web.common.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
