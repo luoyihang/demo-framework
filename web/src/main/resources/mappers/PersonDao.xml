@@ -4,4 +4,18 @@
     <select id="getPersonName" resultType="java.lang.String">
         select userName from t_person where id = #{id}
     </select>
+
+    <select id="getTest" resultType="java.lang.String">
+        select a.userName from t_test a
+        JOIN t_person_0 b on a.userName = b.userName
+    </select>
+
+    <select id="queryOrder" resultType="java.lang.String">
+        select orderName from t_order where orderName = #{orderName} and createTime = #{startDate}
+    </select>
+
+    <insert id="insertOrder">
+        insert into t_order(createTime, orderId, orderName) values(#{createTime}, 10, '1111');
+    </insert>
+    
 </mapper>
