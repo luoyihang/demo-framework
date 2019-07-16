@@ -17,6 +17,7 @@ public class OrderShardingAlgorithm implements ComplexKeysShardingAlgorithm {
     public Collection<String> doSharding(Collection availableTargetNames, ComplexKeysShardingValue shardingValue) {
         Set<String> result = new HashSet<>();
         result.add("t_order_0");
+        
 //        String orderName = (String) ((List) shardingValue.getColumnNameAndShardingValuesMap().get("orderName")).iterator().next();
 //        Date createTime = (Date) shardingValue.getColumnNameAndShardingValuesMap().get("createTime");
         return result;
