@@ -23,7 +23,7 @@ public class MyTestController {
         return personDao.getPersonName(1L);
     }
 
-    @GetMapping("test2")
+    @GetMapping("/test2")
     public String test2() {
         return "success";
     }
