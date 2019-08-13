@@ -13,7 +13,7 @@
 			%n是换行符
         -->
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%d [%thread] %highlight([%level]) %cyan([%c{0}]) %msg%n</pattern>
+            <pattern>%d [%thread] %highlight([%level]) %cyan([%c{0}.%line]) %msg%n</pattern>
         </layout>
     </appender>
 

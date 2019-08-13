@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan(basePackages = "com.lyh.demo.web.consumer.dao")
-//@EnableDubbo
 public class ConsumerApplication {
 
     public static void main(String[] args) {
