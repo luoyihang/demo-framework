@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lyh.demo.web.dao.PersonDao">
-    <select id="getPersonName" resultType="java.lang.String">
-        select userName from t_person where id = #{id}
-    </select>
+    <insert id="insertPerson50">
+        insert into t_person(
+        id,
+        udf01,udf02,udf03,udf04,udf05,udf06,udf07,udf08,udf09,udf10,udf11,udf12,udf13,udf14,udf15,udf16,udf17,udf18,udf19,udf20,
+        udf21,udf22,udf23,udf24,udf25,udf26,udf27,udf28,udf29,udf30,udf31,udf32,udf33,udf34,udf35,udf36,udf37,udf38,udf39,udf40,
+        udf41,udf42,udf43,udf44,udf45,udf46,udf47,udf48,udf49,udf50
+        ) values(
+        #{param.id},
+        #{param.udf01},#{param.udf02},#{param.udf03},#{param.udf04},#{param.udf05},#{param.udf06},#{param.udf07},#{param.udf08},#{param.udf09},#{param.udf10},
+        #{param.udf11},#{param.udf12},#{param.udf13},#{param.udf14},#{param.udf15},#{param.udf16},#{param.udf17},#{param.udf18},#{param.udf19},#{param.udf20},
+        #{param.udf21},#{param.udf22},#{param.udf23},#{param.udf24},#{param.udf25},#{param.udf26},#{param.udf27},#{param.udf28},#{param.udf29},#{param.udf30},
+        #{param.udf31},#{param.udf32},#{param.udf33},#{param.udf34},#{param.udf35},#{param.udf36},#{param.udf37},#{param.udf38},#{param.udf39},#{param.udf40},
+        #{param.udf41},#{param.udf42},#{param.udf43},#{param.udf44},#{param.udf45},#{param.udf46},#{param.udf47},#{param.udf48},#{param.udf49},#{param.udf50}
+        )
+    </insert>
+
+    <insert id="batchInsertPerson50">
+        insert into t_person(
+        id,
+        udf01,udf02,udf03,udf04,udf05,udf06,udf07,udf08,udf09,udf10,udf11,udf12,udf13,udf14,udf15,udf16,udf17,udf18,udf19,udf20,
+        udf21,udf22,udf23,udf24,udf25,udf26,udf27,udf28,udf29,udf30,udf31,udf32,udf33,udf34,udf35,udf36,udf37,udf38,udf39,udf40,
+        udf41,udf42,udf43,udf44,udf45,udf46,udf47,udf48,udf49,udf50
+        ) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},
+            #{item.udf01},#{item.udf02},#{item.udf03},#{item.udf04},#{item.udf05},#{item.udf06},#{item.udf07},#{item.udf08},#{item.udf09},#{item.udf10},
+            #{item.udf11},#{item.udf12},#{item.udf13},#{item.udf14},#{item.udf15},#{item.udf16},#{item.udf17},#{item.udf18},#{item.udf19},#{item.udf20},
+            #{item.udf21},#{item.udf22},#{item.udf23},#{item.udf24},#{item.udf25},#{item.udf26},#{item.udf27},#{item.udf28},#{item.udf29},#{item.udf30},
+            #{item.udf31},#{item.udf32},#{item.udf33},#{item.udf34},#{item.udf35},#{item.udf36},#{item.udf37},#{item.udf38},#{item.udf39},#{item.udf40},
+            #{item.udf41},#{item.udf42},#{item.udf43},#{item.udf44},#{item.udf45},#{item.udf46},#{item.udf47},#{item.udf48},#{item.udf49},#{item.udf50}
+            )
+        </foreach>
+    </insert>
+
+
 </mapper>

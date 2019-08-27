@@ -1,5 +1,10 @@
 package com.lyh.demo.web.dao;
 
+import com.lyh.demo.web.entity.PersonModel;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
 /**
  * @author luoyihang
  * @date 2019/5/6 14:37
@@ -7,10 +12,17 @@ package com.lyh.demo.web.dao;
 public interface PersonDao {
 
     /**
-     * 通过ID获取name
+     * 单条插入
      *
-     * @param id
-     * @return
+     * @param param
      */
-    String getPersonName(Long id);
+    void insertPerson50(@Param("param") PersonModel param);
+
+
+    /**
+     * 批量插入
+     *
+     * @param list
+     */
+    void batchInsertPerson50(@Param("list") List<PersonModel> list);
 }
